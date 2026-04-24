@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Football Scout</title>
+    <!-- Modern Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="brand">
+                <i class="ph ph-soccer-ball brand-icon"></i>
+                <h1>AI Scout</h1>
+            </div>
+            <div class="info-box">
+                <h3>Về Hệ Thống</h3>
+                <p>Khởi chạy bằng mô hình học sâu Autoencoder (16-D Latent Space).</p>
+                <div class="status">
+                    <span class="indicator live"></span>
+                    <span>Server Online</span>
+                </div>
+            </div>
+            <div class="info-box tip-box">
+                <h3>💡 Gợi ý truy vấn</h3>
+                <ul>
+                    <li>"Tìm hậu vệ biên chuyền giỏi"</li>
+                    <li>"Tiền đạo chuyên chớp thời cơ ghi bàn"</li>
+                    <li>"Tiền vệ thu hồi banh, đánh chặn tốt"</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-wrapper">
+            <div class="chat-header glass-panel">
+                <h2>Hệ Thống Gợi Ý & Đánh Giá Cầu Thủ</h2>
+                <p class="subtitle">Trợ lý Phân tích Dữ liệu Bóng đá chuyên sâu</p>
+            </div>
+
+            <div class="chat-window" id="chat-window">
+                <!-- Initial Welcome Message -->
+                <div class="chat-message bot">
+                    <div class="avatar"><i class="ph-fill ph-robot"></i></div>
+                    <div class="message-content glass-chip">
+                        <p>Chào vị HLV trưởng! Tôi là bộ máy phân tích dữ liệu <strong>AI Football Scout</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area glass-panel">
+                <form id="chat-form" onsubmit="sendMessage(event)">
+                    <div class="input-container">
+                        <input type="text" id="user-input" placeholder="Nhập yêu cầu chuyển nhượng của bạn..."
+                            autocomplete="off" required>
+                        <button type="submit" class="send-btn" id="send-btn">
+                            <i class="ph-bold ph-paper-plane-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
